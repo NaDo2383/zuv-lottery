@@ -4,7 +4,7 @@ import {
   PRIZES,
   APP_STORAGE_KEY,
   DEFAULT_CONGRATS_MESSAGE,
-  DEFAULT_PARTICIPANTS_TEST,
+  DEFAULT_PARTICIPANTS,
 } from "./constants"
 import confetti from "canvas-confetti"
 
@@ -157,7 +157,7 @@ const WinnerModal: React.FC<{ winner: Winner | null; onClose: () => void }> = ({
 
 export default function App() {
   const initialParticipants = useMemo(
-    () => DEFAULT_PARTICIPANTS_TEST.map((name, i) => ({ id: `p-${i}`, name })),
+    () => DEFAULT_PARTICIPANTS.map((name, i) => ({ id: `p-${i}`, name })),
     []
   )
   const [participants] = useState<Participant[]>(initialParticipants)
@@ -418,13 +418,7 @@ export default function App() {
                 ))
               )}
             </div>
-            <div className='pt-4 mt-4 border-t border-white/10 flex justify-between'>
-              <div>
-                <div className='text-[8px] text-gray-500 uppercase font-bold'>
-                  Оролцогчид
-                </div>
-                <div className='text-lg font-bold'>{participants.length}</div>
-              </div>
+            <div className='pt-4 mt-4 border-t border-white/10 flex justify-end'>
               <div className='text-right'>
                 <div className='text-[8px] text-gray-500 uppercase font-bold'>Үлдсэн</div>
                 <div className='text-lg font-bold text-blue-500'>
