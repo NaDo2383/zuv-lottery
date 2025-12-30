@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="mn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/icon.png" />
+    <title>Зөв хуримтлалын сан - Азтан тодруулах</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        background: radial-gradient(circle at top, #162a5e 0%, #0a0c14 100%);
+        color: #ffffff;
+        margin: 0;
+        overflow-x: hidden;
+        min-height: 100vh;
+      }
+      .blue-text {
+        background: linear-gradient(to bottom, #4f83ff 0%, #1d58f4 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .prize-glow {
+        box-shadow: 0 0 40px rgba(29, 88, 244, 0.25);
+      }
+      @keyframes shine {
+        0% {
+          transform: translateX(-100%) skewX(-15deg);
+        }
+        100% {
+          transform: translateX(200%) skewX(-15deg);
+        }
+      }
+      .animate-shine {
+        position: relative;
+        overflow: hidden;
+      }
+      .animate-shine::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        animation: shine 3s infinite;
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@19.0.0",
+          "react/": "https://esm.sh/react@19.0.0/",
+          "react-dom": "https://esm.sh/react-dom@19.0.0",
+          "react-dom/": "https://esm.sh/react-dom@19.0.0/",
+          "react/jsx-runtime": "https://esm.sh/react@19.0.0/jsx-runtime",
+          "@google/genai": "https://esm.sh/@google/genai@1.3.0",
+          "canvas-confetti": "https://esm.sh/canvas-confetti@1.9.3"
+        }
+      }
+    </script>
+    <script type="module">
+      import * as React from "react"
+      import * as jsxRuntime from "react/jsx-runtime"
+      window.React = React
+      window.jsxRuntime = jsxRuntime
+    </script>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
