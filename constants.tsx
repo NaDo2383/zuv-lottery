@@ -1055,7 +1055,7 @@ export const PRIZES: Prize[] = [
   {
     id: 1,
     rank: 1,
-    name: "iPhone 17 Pro",
+    name: "iPhone 17 Pro Max",
     value: "Гран при",
     icon: "📱",
     isBigWinner: true,

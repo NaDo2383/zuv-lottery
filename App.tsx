@@ -65,7 +65,7 @@ const NameRoller: React.FC<{ names: string[]; winnerName: string | null }> = ({
   const [isSpinning, setIsSpinning] = useState(false)
   const spinList = useMemo(() => {
     const shuffled = [...names].sort(() => 0.5 - Math.random())
-    const subset = shuffled.slice(0, 50)
+    const subset = shuffled.slice(0, 100)
     if (winnerName) subset[45] = winnerName
     return subset
   }, [winnerName, names])
@@ -87,7 +87,7 @@ const NameRoller: React.FC<{ names: string[]; winnerName: string | null }> = ({
       <div className='absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-[#0a0a0a] to-transparent z-10 pointer-events-none' />
       <div className='absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-[#0a0a0a] to-transparent z-10 pointer-events-none' />
       <div
-        className='flex flex-col transition-transform duration-[2500ms] ease-[cubic-bezier(0.15,0,0.05,1)]'
+        className='flex flex-col transition-transform duration-[5000ms] ease-[cubic-bezier(0.15,0,0.05,1)]'
         style={{
           transform: isSpinning
             ? `translateY(calc(-45 * 60px + 95px))`
@@ -255,7 +255,7 @@ export default function App() {
 
       // We wait until modal closes to set AppState.FINISHED
       setAppState(AppState.READY)
-    }, 2800)
+    }, 5300)
   }, [nextPrize, participants, winners, appState])
 
   const handleReset = () => {
@@ -331,7 +331,11 @@ export default function App() {
                       </h3>
                       <h2
                         className={`text-3xl md:text-5xl font-black ${
-                          nextPrize.isBigWinner ? "text-[#1d58f4]" : "text-white"
+                          nextPrize.isBigWinner
+                            ? nextPrize.name == "iPhone 17 Pro Max"
+                              ? "text-[#F77E2D]"
+                              : "text-[#1d58f4]"
+                            : "text-white"
                         }`}>
                         {nextPrize.name}
                       </h2>
@@ -401,7 +405,11 @@ export default function App() {
                       </div>
                       <div
                         className={`text-[9px] font-black uppercase ${
-                          w.prize.isBigWinner ? "text-blue-400" : "text-gray-500"
+                          w.prize.isBigWinner
+                            ? w.prize.name == "iPhone 17 Pro Max"
+                              ? "text-[#F77E2D]"
+                              : "text-blue-400"
+                            : "text-gray-500"
                         }`}>
                         {w.prize.name}
                       </div>
