@@ -1,0 +1,27 @@
+/* Custom Scrollbar Styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px; /* Very thin */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(29, 88, 244, 0.2); /* Subtle blue */
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(29, 88, 244, 0.6); /* Bright blue on hover */
+  box-shadow: 0 0 10px rgba(29, 88, 244, 0.4);
+}
+
+/* Firefox Support */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(29, 88, 244, 0.3) rgba(255, 255, 255, 0.02);
+}
