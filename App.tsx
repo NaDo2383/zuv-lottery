@@ -410,6 +410,20 @@ export default function App() {
                 ))
               )}
             </div>
+            <div className='pt-4 mt-4 border-t border-white/10 flex justify-between'>
+              <div>
+                <div className='text-[8px] text-gray-500 uppercase font-bold'>
+                  Оролцогчид
+                </div>
+                <div className='text-lg font-bold'>{participants.length}</div>
+              </div>
+              <div className='text-right'>
+                <div className='text-[8px] text-gray-500 uppercase font-bold'>Үлдсэн</div>
+                <div className='text-lg font-bold text-blue-500'>
+                  {remainingPrizes.length}
+                </div>
+              </div>
+            </div>
           </div>
         </aside>
       </main>
