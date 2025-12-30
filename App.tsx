@@ -271,7 +271,7 @@ export default function App() {
   const isAllFinished = winners.length >= PRIZES.length && !showWinnerModal
 
   return (
-    <div className='h-screen relative flex flex-col items-center p-4 overflow-hidden text-white bg-[#0a0a0a]'>
+    <div className='h-screen relative flex flex-col items-center p-4 overflow-hidden text-white'>
       {showWinnerModal && (
         <WinnerModal
           winner={lastWinner}
